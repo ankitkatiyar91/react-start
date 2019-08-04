@@ -1,0 +1,68 @@
+# What Is React?
+
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
+
+
+# Function Components
+
+In React, function components are a simpler way to write components that only contain a render method and don’t have their own state. Instead of defining a class which extends React.Component, we can write a function that takes props as input and returns what should be rendered. Function components are less tedious to write than classes, and many components can be expressed this way.
+
+
+# Updating the Rendered Element
+
+React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+
+
+# React Only Updates What’s Necessary
+
+React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+
+
+# Components and Props
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+
+### Never modify props.
+
+# Lifecycle Methods
+
+* componentDidMount() method runs after the component output has been rendered to the DOM. 
+* componentWillUnmount() is tear down method.
+
+
+### Never update a property directly, always use setXXX() method otherwise it will not be considered a render event from React. Updates are also Async
+
+
+# React Event
+
+React uses a SyntheticEvent object to pass event object to make is polatform independent (cross browsers).
+It has the same interface as the browser’s native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers.
+
+If you find that you need the underlying browser event for some reason, simply use the nativeEvent attribute to get it. Every SyntheticEvent object has the following attributes. https://reactjs.org/docs/events.html
+
+
+
+### Note: A good rule of thumb is that elements inside the map() call need keys.
+
+# Virtual DOM
+
+Ref: https://www.accelebrate.com/blog/the-real-benefits-of-the-virtual-dom-in-react-js
+
+Whenever a change is made to DOM of JavaScript, JavaScript updates that change in dom and Every time the DOM changes, browser need to recalculate the CSS, do layout, and repaint the web page. This is what takes time.
+
+On the other hand REACT reduces it to batch. This strategy of reducing and batching DOM changes, taken to another level of abstraction, is the idea behind React’s Virtual DOM.
+
+Updating the browser’s DOM is a three-step process in React.
+
+	1. Whenever anything may have changed, the entire UI will be re-rendered in a Virtual DOM representation.
+	2. The difference between the previous Virtual DOM representation and the new one will be calculated.
+	3. The real DOM will be updated with what has actually changed. This is very much like applying a patch.
+
+
+
+ref: https://reactjs.org/docs/handling-events.html
+
+TODO:
+Virtual Dom, When dom is rerenders
+
+Why/when binding of events required?

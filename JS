@@ -1,0 +1,49 @@
+JavaScript's types are:
+
+	Number
+	String
+	Boolean
+	Symbol (new in ES2015)
+	Object
+		Function
+		Array
+		Date
+		RegExp
+	null
+	undefined
+
+
+New variables in JavaScript are declared using one of three keywords: let, const, or var.
+
+functions have access to an additional variable inside their body called arguments, which is an array-like object holding all of the values passed to the function. 
+
+
+function avg(...args) {
+  var sum = 0;
+  for (let value of args) {
+    sum += value;
+  }
+  return sum / args.length;
+}
+
+avg(2, 3, 4, 5); // 3.5
+
+
+function makePerson(first, last) {
+  return {
+    first: first,
+    last: last,
+    fullName: function() {
+      return this.first + ' ' + this.last;
+    },
+    fullNameReversed: function() {
+      return this.last + ', ' + this.first;
+    }
+  };
+}
+
+var s = makePerson('Simon', 'Willison');
+s.fullName(); // "Simon Willison"
+s.fullNameReversed(); // "Willison, Simon"
+
+JavaScript object are hashmap
