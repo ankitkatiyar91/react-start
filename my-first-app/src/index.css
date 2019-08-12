@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.FancyBorder {
+  margin: 5px;
+  padding: 2px;
+  text-align: center;
+  border: 1px solid;
+}
+
+.FancyBorder-blue{
+  border-color: blue;
+}

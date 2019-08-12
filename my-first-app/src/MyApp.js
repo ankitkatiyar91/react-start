@@ -5,6 +5,8 @@ import ActionEvent from './EventHandle'
 import Toggle from './Toggle'
 import List from './List'
 import NameFrom from './NameForm'
+import BoilerCalculator from './BoilerCalculator'
+import WelcomeDialog from './WelcomeDialog'
 
 class MyApp extends React.Component{
     render() {
@@ -16,6 +18,8 @@ class MyApp extends React.Component{
         <Toggle/>
         <List number="2"/>
         <NameFrom/>
+        <BoilerCalculator/>
+        <WelcomeDialog/>
         </div>
     );
     }
