@@ -21,8 +21,6 @@ class FilterableProductTable extends React.Component{
         this.handleChange = this.handleChange.bind(this);
     }
 
-    
-
     render(){
         return(
             <fieldset>
@@ -36,6 +34,12 @@ class FilterableProductTable extends React.Component{
     handleChange(e){
        this.setState({text:e.target.value})
     }
+
+    /** Update default props */
+    static defaultProps = {
+        prop: 'hello',
+      };
+    
 }
 
 function SearchingFor(props){
@@ -45,5 +49,6 @@ function SearchingFor(props){
         return(<span>Searching For: {props.text}</span>);
     }
 }
+
 
 export default FilterableProductTable;
