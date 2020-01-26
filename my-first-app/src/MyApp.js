@@ -13,13 +13,13 @@ class MyApp extends React.Component{
     
     return (
         <div>
-        <WelcomeApp />
-        <ActionEvent/>
-        <Toggle/>
-        <List number="2"/>
+        {/*<WelcomeApp />*/}
+        {/*<ActionEvent/>*/}
+        {/*<Toggle/>*/}
+        {/*<List number="2"/>*/}
         <NameFrom/>
-        <BoilerCalculator/>
-        <WelcomeDialog/>
+        {/*<BoilerCalculator/>*/}
+        {/*<WelcomeDialog/>*/}
         </div>
     );
     }
