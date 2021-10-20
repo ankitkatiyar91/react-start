@@ -7,7 +7,7 @@ class NameForm extends React.Component {
         this.state = {
             name: '',
             essay : '',
-            fruit : ''
+            fruit : 'Grapefruit'
         }
 
         // If you want to bind it with the object then add following lines
@@ -62,7 +62,7 @@ class NameForm extends React.Component {
                     <input type="submit" value="Submit" />
                 </form>
                 <br />
-                <span>You are typing:  <br/> 
+                <span><b>You are typing:</b>  <br/>
                 Name: {this.state.name} <br/> 
                 Fruit: {this.state.fruit} <br/>
                 Essay: {this.state.essay}
