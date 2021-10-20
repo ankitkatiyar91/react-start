@@ -8,22 +8,24 @@ import NameFrom from './NameForm'
 import MyBootForm from './MyBootForm'
 import BoilerCalculator from './BoilerCalculator'
 import WelcomeDialog from './WelcomeDialog'
+import InferenceTest from "./InferenceTest";
 
-class MyApp extends React.Component{
+class MyApp extends React.Component {
     render() {
-    
-    return (
-        <div>
-        {/*<WelcomeApp />*/}
-        {/*<ActionEvent/>*/}
-        {/*<Toggle/>*/}
-        {/*<List number="2"/>*/}
-        <NameFrom/>
-        <MyBootForm/>
-        {/*<BoilerCalculator/>*/}
-        {/*<WelcomeDialog/>*/}
-        </div>
-    );
+
+        return (
+            <div>
+                {/*<WelcomeApp />*/}
+                {/*<ActionEvent/>*/}
+                {/*<Toggle/>*/}
+                {/*<List number="2"/>*/}
+                {/*<NameFrom/>*/}
+                {/*<MyBootForm/>*/}
+                <InferenceTest/>
+                {/*<BoilerCalculator/>*/}
+                {/*<WelcomeDialog/>*/}
+            </div>
+        );
     }
 }
 

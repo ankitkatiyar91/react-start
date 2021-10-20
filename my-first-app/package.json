@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "nvm": "0.0.4",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "bootstrap": "^4.6.0",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.6.4",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.0.1",
+    "streaming-client": "file:../../../../ekstep/speech-recognition-open-api-client"
   },
   "scripts": {
     "start": "react-scripts start",
