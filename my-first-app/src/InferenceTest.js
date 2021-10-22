@@ -1,6 +1,5 @@
 import React from 'react'
-// import StreamingClient from 'streaming-client'
-const  StreamingClient = require('streaming-client/index');
+import StreamingClient from '@project-sunbird/open-speech-streaming-client'
 
 // comment
 class InferenceTest extends React.Component {
@@ -11,23 +10,21 @@ class InferenceTest extends React.Component {
             text: '',
             streaming: new StreamingClient()
         }
-console.log("StreamingClient()", this.state.streaming);
         // If you want to bind it with the object then add following lines
         this.handleStart = this.handleStart.bind(this);
         this.handleStop = this.handleStop.bind(this);
     }
 
     handleStart(event) {
-        // this.setState({name: event.target.value});
-        console.log(this.state);
         const streaming = this.state.streaming;
         const language = 'en-IN';
+        const _this=this;
         streaming.connect('http://35.192.29.24:9008/', language, function (action, id) {
             console.log("Connected", id);
             if (action === null) {
                 streaming.startStreaming(function (transcript) {
                     console.log("Data", transcript);
-                    this.setState({text : transcript});
+                    _this.setState({text : transcript});
                 }, (e) => {
                     console.log("I got error", e);
                 })
@@ -40,9 +37,10 @@ console.log("StreamingClient()", this.state.streaming);
     handleStop(event) {
         // this.setState({name: event.target.value});
         const streaming = this.state.streaming;
+        const _this=this;
         streaming.stopStreaming();
-        streaming.punctuateText(document.getElementById('output').innerHTML, 'https://inference.vakyansh.in/punctuate', (status, text) => {
-            this.setState({text : text});
+        streaming.punctuateText(this.state.text, 'https://inference.vakyansh.in/punctuate', (status, text) => {
+            _this.setState({text : text});
         }, (status, error) => {
             console.log("Failed to punctuate", status, error);
         })

@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@project-sunbird/open-speech-streaming-client": "^1.0.0",
     "bootstrap": "^4.6.0",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.4",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.0.1",
-    "streaming-client": "file:../../../../ekstep/speech-recognition-open-api-client"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
