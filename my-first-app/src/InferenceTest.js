@@ -1,5 +1,5 @@
 import React from 'react'
-import StreamingClient from '@project-sunbird/open-speech-streaming-client'
+import {StreamingClient,SocketStatus} from '@project-sunbird/open-speech-streaming-client'
 
 // comment
 class InferenceTest extends React.Component {
@@ -19,9 +19,10 @@ class InferenceTest extends React.Component {
         const streaming = this.state.streaming;
         const language = 'en-IN';
         const _this=this;
-        streaming.connect('http://35.192.29.24:9008/', language, function (action, id) {
-            console.log("Connected", id);
-            if (action === null) {
+        streaming.connect('http://localhost:9008/', language, function (action, id) {
+            console.log("Connected", id,'action:',action);
+            if (action === SocketStatus.CONNECTED) {
+                console.log('Starting.....');
                 streaming.startStreaming(function (transcript) {
                     console.log("Data", transcript);
                     _this.setState({text : transcript});
@@ -36,14 +37,19 @@ class InferenceTest extends React.Component {
 
     handleStop(event) {
         // this.setState({name: event.target.value});
-        const streaming = this.state.streaming;
-        const _this=this;
-        streaming.stopStreaming();
-        streaming.punctuateText(this.state.text, 'https://inference.vakyansh.in/punctuate', (status, text) => {
-            _this.setState({text : text});
-        }, (status, error) => {
-            console.log("Failed to punctuate", status, error);
-        })
+        console.log('Punctuate clicked: '+this.state.text);
+        if (this.state.text) {
+            const streaming = this.state.streaming;
+            const _this = this;
+            streaming.stopStreaming();
+            streaming.punctuateText(this.state.text, 'https://inference.vakyansh.in/punctuate/', (status, text) => {
+                _this.setState({text: text});
+            }, (status, error) => {
+                console.log("Failed to punctuate", status, error);
+            })
+        } else {
+           return ;
+        }
     }
 
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@project-sunbird/open-speech-streaming-client": "^1.0.0",
+    "@project-sunbird/open-speech-streaming-client": "file:../../../../ekstep/speech-recognition-open-api-client",
     "bootstrap": "^4.6.0",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.4",
